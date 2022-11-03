@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>hotel-lab-376</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        function showInput() {
+            // e.preventDefault();
+            console.log('here');
+            document.getElementById('display').innerHTML =
+                document.getElementById("fname").value + " " +
+                document.getElementById("lname").value + " " +
+                document.getElementById("email").value;
+        }
+    </script>
+</head>
+
+<body style="background-color:grey;">
+
+    <nav class="navbar bg-dark navbar-dark navbar-expand-sm sticky-top justify-content-center">
+        <p class="navbar-brand ps-3"></p>
+        <ul class="navbar-nav">
+            <li class="navitem"><a class="nav-link" href="https://github.com/hunter-mcgriff/hotel-lab-376" target="_blank">Repo Link</a> </li>
+            <li class="navitem"><button id="btnLoadData" class="btn btn-secondary">Load Saved Data</button></li>
+            <li class="navitem"><a class="nav-link" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fhunter-mcgriff.github.io%2Fhotel-lab-376%2F" target="_blank">Validity Checker</a> </li>
+        </ul>
+
+    </nav>
+
+
+
+
+
+
+    <!-- Beginning of Form -->
+    <h1 style="text-align:center;">Vehicle Website Sign-Up</h1>
+
+    <div class="container">
+        <form>
+
+            <!-- First Name Entry -->
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                </div>
+            </div>
+
+            <!-- Last Name Entry -->
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">Last Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                </div>
+            </div>
+
+            <!-- Email Entry -->
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="email" id="email" name="youremail" placeholder="Your email...">
+                </div>
+            </div>
+
+            <!-- Password Entry -->
+            <div class="row">
+                <div class="col-25">
+                    <label for="pwd">Password</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="pwd" name="yourpassword" placeholder="Your password...">
+                </div>
+            </div>
+
+            <!-- Country Selector w/ options-->
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Country</label>
+                </div>
+                <div class="col-75">
+                    <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+
+                    <!-- Date of Birth Selector-->
+                    <div class="row">
+                        <div class="col-75">
+                            <label for="myDateTimeLocal">Date of Birth</label>
+                            <input type="datetime-local" name="myDateTimeLocal" id="myDateTimeLocal" />
+                            <br />
+                        </div>
+                    </div>
+
+                    <!-- Male or Female -->
+                    <input type="radio" id="male" name="gender" value="M">   <label for="male">Male</label><br>
+
+                    <input type="radio" id="female" name="gender" value="F">   <label for="female">Female</label><br>
+
+                </div>
+            </div>
+
+            <!-- Vehicle Selection -->
+            <div class="row">
+                <div class="col-md-5 offset-md-1 card">
+                    <div class="card-body">
+
+                        <h4 class="card-title">Vehicle Selection</h4>
+
+                        <label for="carKind" class="form-label">Car Brands</label>
+                        <select id="carKind" class="form-select" name="petName">
+              <option value="" disabled selected>Select your option</option>
+              <option value="Honda">Honda</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Chevrolet">Chevrolet</option>
+              <option value="Ford">Ford</option>
+              <option value="Mazda">Mazda</option>
+              <option value="Nissan">Nissan</option>
+              <option value="Jeep">Jeep</option>
+              <option value="Hyundai">Hyundai</option>
+              <option value="Kia">Kia</option>
+            </select>
+                        <hr />
+                        <label for="carName" class="form-label">Vehicle Types</label>
+                        <select id="carName" class="form-select" name="carName" disabled>
+              <option>Select your car brand first.</option>
+            </select>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject Entry Box -->
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                </div>
+            </div>
+
+            <!-- News Updates Checkbox-->
+            <label for="myCheck">News Updates</label>
+            <input type="checkbox" id="myCheck" onclick="myFunction()">
+
+            <p id="text" style="display:none">You will be signed up to receive news updates.</p>
+
+            <!-- Script for News Updates Checkbox -->
+            <script>
+                function myFunction() {
+                    // Get the checkbox
+                    var checkBox = document.getElementById("myCheck");
+                    // Get the output text
+
+                    console.log(checkBox.checked);
+
+                    var text = document.getElementById("text");
+                    // If the checkbox is checked, display the output text
+                    if (checkBox.checked == true) {
+                        text.style.display = "block";
+                    } else {
+                        text.style.display = "none";
+                    }
+                }
+            </script>
+
+            <!-- Clear/Submit Buttons -->
+            <div class="row">
+                <input type="reset" value="Clear">
+                <input id="submitForm" type="button" onclick="showInput();" value="Submit" class="btn btn-primary">
+            </div>
+
+            <!-- onclick="showInput(e);" -->
+        </form>
+
+        <p><span id='display'></span></p>
+        <script>
+            // document.getElementById("submitForm").click(showInput);
+        </script>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+        <script src="scripts/scripts.js"></script>
+        <script src="scripts/ajax.js"></script>
+
+
+
+    </div>
+
+</body>
+
+</html>
